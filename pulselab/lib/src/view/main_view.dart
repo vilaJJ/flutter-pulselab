@@ -3,7 +3,9 @@ import 'package:pulselab/src/enums/main_navigation_options.dart';
 import 'package:pulselab/src/view/account_view.dart';
 import 'package:pulselab/src/view/appointments_view.dart';
 import 'package:pulselab/src/view/donations_view.dart';
+import 'package:pulselab/src/viewmodel/main_view_model.dart';
 import 'package:pulselab/src/widgets/app_icon.dart';
+import 'package:pulselab/src/widgets/loading_adviser.dart';
 
 class MainView extends StatefulWidget {
   const MainView({super.key});
@@ -13,6 +15,9 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
+  final viewModel = MainViewModel();
+
+  bool loaded = false;
   int pageIndex = 0;
   final pageController = PageController();
   late final List<BottomNavigationBarItem> bottomNavigationBarItems;
@@ -20,6 +25,7 @@ class _MainViewState extends State<MainView> {
   @override
   void initState() {
     super.initState();
+    _loadInitialData();
     _generateBottomNavigationBarItems();
   }
 
@@ -31,15 +37,21 @@ class _MainViewState extends State<MainView> {
         title: const AppIcon(),
         centerTitle: true,
       ),
-      body: PageView(
-        controller: pageController,
-        onPageChanged: _onPageChanged,
-        children: const [
-          AppointmentsView(),
-          DonationsView(),
-          AccountView(),
-        ],
-      ),
+      body: loaded
+          ? PageView(
+              controller: pageController,
+              onPageChanged: _onPageChanged,
+              children: [
+                const AppointmentsView(),
+                const DonationsView(),
+                AccountView(
+                  user: viewModel.user,
+                ),
+              ],
+            )
+          : const Center(
+              child: LoadingAdviser(),
+            ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: pageIndex,
         onTap: _onBottomNavigationItemTap,
@@ -58,6 +70,7 @@ class _MainViewState extends State<MainView> {
 
         return BottomNavigationBarItem(
           icon: Icon(item.icon),
+          activeIcon: Icon(item.activeIcon),
           label: item.title,
           tooltip: item.title,
         );
@@ -65,8 +78,19 @@ class _MainViewState extends State<MainView> {
     );
   }
 
+  void _loadInitialData() async {
+    await viewModel.loadInitialData();
+
+    setState(() {
+      loaded = true;
+    });
+  }
+
   void _onBottomNavigationItemTap(int index) {
-    pageController.jumpToPage(index);
+    if (loaded) {
+      pageController.jumpToPage(index);
+    }
+
     _onPageChanged(index);
   }
 
