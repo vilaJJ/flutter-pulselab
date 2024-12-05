@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pulselab/src/model/user_model.dart';
 import 'package:pulselab/src/view/account/my_donations_view.dart';
-import 'package:pulselab/src/widgets/blood_type_label.dart';
 import 'package:pulselab/src/widgets/icon_text_button.dart';
-import 'package:pulselab/src/widgets/icon_text_label.dart';
 import 'package:pulselab/src/widgets/information_not_found_adviser.dart';
+import 'package:pulselab/src/widgets/person_details.dart';
 import 'package:pulselab/src/widgets/pulse_lab_icons.dart';
 import 'package:pulselab/src/widgets/user_photo.dart';
 
@@ -45,30 +44,10 @@ class _AccountViewState extends State<AccountView> {
                 subtitle: Text(user.emailAddress),
                 trailing: const Icon(Icons.arrow_forward_ios),
               ),
-              BloodTypeLabel(
-                bloodType: user.bloodType,
-              ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    IconTextLabel(
-                      data: user.age,
-                      icon: Icons.cake_rounded,
-                      title: "Idade",
-                    ),
-                    IconTextLabel(
-                      data: "${user.weight} kg",
-                      icon: Icons.monitor_weight_rounded,
-                      title: "Peso",
-                    ),
-                    IconTextLabel(
-                      data: "${user.height} m",
-                      icon: Icons.height_outlined,
-                      title: "Altura",
-                    ),
-                  ],
+                child: PersonDetails(
+                  person: user,
                 ),
               ),
               Expanded(
@@ -79,7 +58,7 @@ class _AccountViewState extends State<AccountView> {
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: IconTextButton(
-                        onPressed: () {},
+                        onPressed: _onAppointmentsHistoryPressed,
                         icon: Icons.calendar_month_outlined,
                         title: "Histórico de agendamentos",
                       ),
@@ -103,6 +82,8 @@ class _AccountViewState extends State<AccountView> {
   }
 
   void _onUserTileTap() {}
+
+  void _onAppointmentsHistoryPressed() {}
 
   void _onMyDonationsPressed() async {
     await Navigator.of(context).push(

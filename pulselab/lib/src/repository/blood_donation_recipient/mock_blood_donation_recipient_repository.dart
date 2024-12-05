@@ -15,7 +15,7 @@ class MockBloodDonationRecipientRepository implements BloodDonationRecipientRepo
         weight: 66,
         height: 1.82,
         birthdate: DateTime(1970, 3, 1),
-        bloodType: BloodType.bPositive,
+        bloodType: BloodType.abPositive,
         priority: Priority.high,
       ),
       healthIssueDescription: "Realizar uma cirurgia agendada.",

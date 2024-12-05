@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pulselab/src/model/blood_donation_recipient_model.dart';
 import 'package:pulselab/src/utilities/extensions/date_time_extensions.dart';
-import 'package:pulselab/src/viewmodel/donations_view_model.dart';
+import 'package:pulselab/src/view/donations/blood_donation_recipient_details_view.dart';
+import 'package:pulselab/src/viewmodel/donations/donations_view_model.dart';
 import 'package:pulselab/src/widgets/empty_list.dart';
 import 'package:pulselab/src/widgets/loading_adviser.dart';
+import 'package:pulselab/src/widgets/priority_legend.dart';
 import 'package:pulselab/src/widgets/search_title.dart';
 
 class DonationsView extends StatefulWidget {
@@ -25,6 +28,10 @@ class _DonationsViewState extends State<DonationsView> {
           children: [
             const SearchTitle(
               title: "Ajude pessoas que precisam de doações de sangue",
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 8),
+              child: PriorityLegend(),
             ),
             const Divider(),
             FutureBuilder(
@@ -60,7 +67,7 @@ class _DonationsViewState extends State<DonationsView> {
                       return Card(
                         color: color,
                         child: ListTile(
-                          onTap: () {},
+                          onTap: () async => await _onBloodDonationRecipientPressed(bloodDonationRecipient),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -92,6 +99,14 @@ class _DonationsViewState extends State<DonationsView> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Future<void> _onBloodDonationRecipientPressed(BloodDonationRecipientModel value) async {
+    await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => BloodDonationRecipientDetailsView(bloodDonationRecipient: value),
       ),
     );
   }

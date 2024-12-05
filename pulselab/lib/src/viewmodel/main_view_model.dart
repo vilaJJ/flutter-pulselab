@@ -4,6 +4,7 @@ import 'package:pulselab/src/repository/user/mock_user_repository.dart';
 import 'package:pulselab/src/repository/user/user_repository.dart';
 import 'package:pulselab/src/services/preferences/mock_preferences.dart';
 import 'package:pulselab/src/services/preferences/preferences.dart';
+import 'package:pulselab/src/utilities/environment/user_environment.dart';
 
 class MainViewModel {
   UserModel? user;
@@ -13,6 +14,7 @@ class MainViewModel {
 
   Future<void> loadInitialData() async {
     await _getCurrentlyUser();
+    UserEnvironment.actualUser = user;
   }
 
   Future<void> _getCurrentlyUser() async {
