@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pulselab/src/model/user_model.dart';
+import 'package:pulselab/src/view/account/my_donations_view.dart';
 import 'package:pulselab/src/widgets/blood_type_label.dart';
 import 'package:pulselab/src/widgets/icon_text_button.dart';
 import 'package:pulselab/src/widgets/icon_text_label.dart';
 import 'package:pulselab/src/widgets/information_not_found_adviser.dart';
+import 'package:pulselab/src/widgets/pulse_lab_icons.dart';
 import 'package:pulselab/src/widgets/user_photo.dart';
 
 class AccountView extends StatefulWidget {
@@ -85,8 +87,8 @@ class _AccountViewState extends State<AccountView> {
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: IconTextButton(
-                        onPressed: () {},
-                        icon: Icons.abc,
+                        onPressed: _onMyDonationsPressed,
+                        icon: PulseLabIcons.donation,
                         title: "Minhas doações",
                       ),
                     ),
@@ -101,4 +103,12 @@ class _AccountViewState extends State<AccountView> {
   }
 
   void _onUserTileTap() {}
+
+  void _onMyDonationsPressed() async {
+    await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const MyDonationsView(),
+      ),
+    );
+  }
 }

@@ -20,6 +20,11 @@ class MockUserRepository implements UserRepository {
   ];
 
   @override
+  Future<List<UserModel>> getAll() async {
+    return await Future<List<UserModel>>.value(_data);
+  }
+
+  @override
   Future<UserModel?> getById(String id) async {
     final user = _data.where((user) => user.id == id).firstOrNull;
     return await Future<UserModel>.value(user);

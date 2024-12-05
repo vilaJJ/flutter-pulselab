@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pulselab/src/enums/main_navigation_options.dart';
-import 'package:pulselab/src/view/account_view.dart';
-import 'package:pulselab/src/view/appointments_view.dart';
-import 'package:pulselab/src/view/donations_view.dart';
+import 'package:pulselab/src/view/account/account_view.dart';
+import 'package:pulselab/src/view/appointments/appointments_view.dart';
+import 'package:pulselab/src/view/donations/donations_view.dart';
 import 'package:pulselab/src/viewmodel/main_view_model.dart';
 import 'package:pulselab/src/widgets/app_icon.dart';
 import 'package:pulselab/src/widgets/loading_adviser.dart';

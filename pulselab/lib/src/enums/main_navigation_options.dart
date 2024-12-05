@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pulselab/src/widgets/pulse_lab_icons.dart';
 
 enum MainNavigationOptions {
   appointments(
@@ -8,8 +9,8 @@ enum MainNavigationOptions {
   ),
   donations(
     title: "Doações",
-    icon: Icons.abc_outlined,
-    activeIcon: Icons.abc_rounded,
+    icon: PulseLabIcons.donation,
+    activeIcon: PulseLabIcons.donation,
   ),
   account(
     title: "Conta",

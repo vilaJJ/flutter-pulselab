@@ -8,8 +8,8 @@ import 'package:pulselab/src/services/preferences/preferences.dart';
 class MainViewModel {
   UserModel? user;
 
-  final Preferences preferences = MockPreferences();
-  final UserRepository userRepository = MockUserRepository();
+  final Preferences _preferences = MockPreferences();
+  final UserRepository _userRepository = MockUserRepository();
 
   Future<void> loadInitialData() async {
     await _getCurrentlyUser();
@@ -17,10 +17,10 @@ class MainViewModel {
 
   Future<void> _getCurrentlyUser() async {
     final userId = await _getCurrentlyUserId();
-    user = userId is String ? await userRepository.getById(userId) : null;
+    user = userId is String ? await _userRepository.getById(userId) : null;
   }
 
   Future<String?> _getCurrentlyUserId() async {
-    return await preferences.getString(PreferencesKeysConstants.currentlyUserId);
+    return await _preferences.getString(PreferencesKeysConstants.currentlyUserId);
   }
 }

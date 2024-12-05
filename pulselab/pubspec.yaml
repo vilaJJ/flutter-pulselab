@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  intl: ^0.20.1
 
 dev_dependencies:
   flutter_test:
@@ -32,3 +33,7 @@ flutter:
   assets:
     - assets/icons/app_icon.png
     - assets/users/photo_ee52c78b-a95c-424d-9dac-1eae79732f3c.jpg
+  fonts:
+    - family: PulseLab
+      fonts:
+        - asset: assets/fonts/PulseLab.ttf
