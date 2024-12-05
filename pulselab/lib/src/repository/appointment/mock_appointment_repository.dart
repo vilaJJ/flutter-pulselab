@@ -12,6 +12,7 @@ class MockAppointmentRepository implements AppointmentRepository {
       id: "90c17aed-6dfd-4454-a42c-3fd36f243fa5",
       type: AppointmentType.exam,
       name: "Hemograma",
+      description: "Hemograma é um exame que avalia as células sanguíneas de um paciente, ou seja, as da série branca e vermelha, contagem de plaquetas, reticulócitos e índices hematológicos. O exame é requerido pelo profissional de saúde para diagnosticar ou controlar a evolução de uma doença. Um hemograma é constituído pela contagem das células brancas (leucócitos), células vermelhas (hemácias), hemoglobina (Hb), hematócrito (Ht), índices das células vermelhas, e contagem de plaquetas. Hemograma Completo consiste do hemograma mais a contagem diferencial dos leucócitos.",
       patient: PatientModel(
         id: "ee52c78b-a95c-424d-9dac-1eae79732f3c",
         name: "Rodrigo Ian Moreira",
@@ -33,6 +34,7 @@ class MockAppointmentRepository implements AppointmentRepository {
       id: "a9fca93a-6fa7-4384-8420-183490862ad2",
       type: AppointmentType.surgery,
       name: "Transfusão",
+      description: "Transfusão é o ato médico de transferir um sangue ou hemocomponentes deste (plasma sanguíneo, plaquetas, hemácias e leucócitos) de um doador para o sistema circulatório de um receptor. Para o sucesso do procedimento, é necessário haver uma compatibilização entre os agentes. É um tipo de terapia que tem se mostrado muito eficaz em situações de choque, hemorragias ou doenças sanguíneas. Frequentemente usa-se transfusão em intervenções cirúrgicas, traumatismos, hemorragias digestivas ou em outros casos em que tenha havido grande perda de sangue.",
       patient: PatientModel(
         id: "ee52c78b-a95c-424d-9dac-1eae79732f3c",
         name: "Rodrigo Ian Moreira",

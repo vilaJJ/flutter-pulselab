@@ -8,6 +8,7 @@ class AppointmentModel extends BaseModel {
     required super.id,
     required this.type,
     required this.name,
+    required this.description,
     required this.patient,
     required this.doctor,
     required this.createdOn,
@@ -16,6 +17,7 @@ class AppointmentModel extends BaseModel {
 
   final AppointmentType type;
   final String name;
+  final String description;
   final PatientModel patient;
   final DoctorModel doctor;
   final DateTime createdOn;

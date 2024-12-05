@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pulselab/src/model/appointments/appointment_model.dart';
 import 'package:pulselab/src/utilities/extensions/date_time_extensions.dart';
+import 'package:pulselab/src/view/appointments/appointment_detail_view.dart';
 import 'package:pulselab/src/viewmodel/appointments/appointments_view_model.dart';
 import 'package:pulselab/src/widgets/empty_list.dart';
 import 'package:pulselab/src/widgets/loading_adviser.dart';
@@ -109,5 +110,13 @@ class _AppointmentsViewState extends State<AppointmentsView> {
     );
   }
 
-  Future<void> _onAppointmentCardPressed(AppointmentModel appointment) async {}
+  Future<void> _onAppointmentCardPressed(AppointmentModel appointment) async {
+    await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => AppointmentDetailView(
+          appointment: appointment,
+        ),
+      ),
+    );
+  }
 }
