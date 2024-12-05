@@ -1,4 +1,4 @@
-import 'package:pulselab/src/model/user_model.dart';
+import 'package:pulselab/src/model/people/user_model.dart';
 
 class UserEnvironment {
   UserEnvironment._();

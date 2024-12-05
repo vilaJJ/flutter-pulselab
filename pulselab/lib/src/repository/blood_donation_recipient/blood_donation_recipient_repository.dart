@@ -1,4 +1,4 @@
-import 'package:pulselab/src/model/blood_donation_recipient_model.dart';
+import 'package:pulselab/src/model/donations/blood_donation_recipient_model.dart';
 import 'package:pulselab/src/repository/base_repository.dart';
 
 abstract class BloodDonationRecipientRepository implements BaseRepository {

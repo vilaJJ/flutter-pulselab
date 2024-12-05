@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pulselab/src/model/person_model.dart';
+import 'package:pulselab/src/model/people/person_model.dart';
 import 'package:pulselab/src/widgets/blood_type_label.dart';
 import 'package:pulselab/src/widgets/icon_text_label.dart';
 

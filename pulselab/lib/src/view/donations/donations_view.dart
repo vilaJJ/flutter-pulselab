@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pulselab/src/model/blood_donation_recipient_model.dart';
+import 'package:pulselab/src/model/donations/blood_donation_recipient_model.dart';
 import 'package:pulselab/src/utilities/extensions/date_time_extensions.dart';
 import 'package:pulselab/src/view/donations/blood_donation_recipient_details_view.dart';
 import 'package:pulselab/src/viewmodel/donations/donations_view_model.dart';

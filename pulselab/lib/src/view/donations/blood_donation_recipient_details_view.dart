@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pulselab/src/model/blood_donation_recipient_model.dart';
-import 'package:pulselab/src/model/patient_model.dart';
+import 'package:pulselab/src/model/donations/blood_donation_recipient_model.dart';
+import 'package:pulselab/src/model/people/patient_model.dart';
 import 'package:pulselab/src/viewmodel/donations/blood_donation_recipient_details_view_model.dart';
 import 'package:pulselab/src/widgets/person_details.dart';
 import 'package:pulselab/src/widgets/text_label.dart';

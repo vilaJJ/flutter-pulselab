@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pulselab/src/model/user_model.dart';
+import 'package:pulselab/src/model/people/user_model.dart';
 import 'package:pulselab/src/view/account/my_donations_view.dart';
 import 'package:pulselab/src/widgets/icon_text_button.dart';
 import 'package:pulselab/src/widgets/information_not_found_adviser.dart';

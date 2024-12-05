@@ -1,6 +1,6 @@
 import 'package:pulselab/src/enums/blood_type.dart';
 import 'package:pulselab/src/enums/gender.dart';
-import 'package:pulselab/src/model/user_model.dart';
+import 'package:pulselab/src/model/people/user_model.dart';
 import 'package:pulselab/src/repository/user/user_repository.dart';
 
 class MockUserRepository implements UserRepository {

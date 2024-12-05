@@ -1,5 +1,5 @@
 import 'package:pulselab/src/enums/priority.dart';
-import 'package:pulselab/src/model/person_model.dart';
+import 'package:pulselab/src/model/people/person_model.dart';
 
 class PatientModel extends PersonModel {
   PatientModel({

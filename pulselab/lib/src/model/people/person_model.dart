@@ -7,16 +7,16 @@ abstract class PersonModel extends BaseModel {
     required super.id,
     required this.name,
     this.gender,
-    required this.weight,
-    required this.height,
+    this.weight,
+    this.height,
     required this.birthdate,
     this.bloodType,
   });
 
   final String name;
   final Gender? gender;
-  final double weight;
-  final double height;
+  final double? weight;
+  final double? height;
   final DateTime birthdate;
   final BloodType? bloodType;
 

@@ -1,5 +1,5 @@
 import 'package:pulselab/src/model/base_model.dart';
-import 'package:pulselab/src/model/patient_model.dart';
+import 'package:pulselab/src/model/people/patient_model.dart';
 
 class BloodDonationRecipientModel extends BaseModel {
   BloodDonationRecipientModel({

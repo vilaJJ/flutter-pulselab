@@ -1,5 +1,5 @@
 import 'package:pulselab/src/constants/preferences_constants.dart';
-import 'package:pulselab/src/model/user_model.dart';
+import 'package:pulselab/src/model/people/user_model.dart';
 import 'package:pulselab/src/repository/user/mock_user_repository.dart';
 import 'package:pulselab/src/repository/user/user_repository.dart';
 import 'package:pulselab/src/services/preferences/mock_preferences.dart';

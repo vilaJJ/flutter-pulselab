@@ -1,5 +1,5 @@
 import 'package:pulselab/src/enums/blood_type.dart';
-import 'package:pulselab/src/model/user_model.dart';
+import 'package:pulselab/src/model/people/user_model.dart';
 import 'package:pulselab/src/utilities/environment/user_environment.dart';
 
 class BloodDonationRecipientDetailsViewModel {
