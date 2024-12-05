@@ -99,7 +99,7 @@ class _BloodDonationRecipientDetailsViewState extends State<BloodDonationRecipie
                     color: Colors.amber.shade900,
                   ),
                   title: const Text(
-                    "Você não pode realizar está doação.",
+                    "Você não pode realizar esta doação.",
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                     ),
